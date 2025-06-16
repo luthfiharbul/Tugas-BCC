@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VetiTube - Mini YouTube</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🎬 Veti<span class="highlight">Tube</span></h1>
+    <p>Streaming video Vetivermasi</p>
+  </header>
+
+  <main class="video-gallery">
+    <!-- Video 1 -->
+    <div class="video-card" onclick="playVideo('https://res.cloudinary.com/dvea5ssyp/video/upload/v1750076756/y6gskaj8dacqpeuiacpm.mp4')">
+      <img src="https://res.cloudinary.com/dvea5ssyp/image/upload/v1750076935/Screenshot_2025-06-16_192826_kwt6x5.png" alt="Thumbnail Video 1" />
+      <h3>Tutorial CPR</h3>
+    </div>
+
+    <!-- Video 2 -->
+    <div class="video-card" onclick="playVideo('https://res.cloudinary.com/dvea5ssyp/video/upload/v1750077246/Company_Profil_Unsika_doss94.mp4')">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_4-9cYfAvtrvJj5me-7hqZXI_igzfbRr_2A&s" alt="Thumbnail Video 2" />
+      <h3>Company Profil Unsika</h3>
+    </div>
+  </main>
+
+  <section class="player-section" id="playerSection">
+    <video id="videoPlayer" controls autoplay></video>
+  </section>
+
+  <script>
+    function playVideo(url) {
+      const playerSection = document.getElementById('playerSection');
+      const videoPlayer = document.getElementById('videoPlayer');
+      videoPlayer.src = url;
+      playerSection.scrollIntoView({ behavior: 'smooth' });
+      videoPlayer.play();
+    }
+  </script>
+</body>
+</html>
